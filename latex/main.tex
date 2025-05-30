@@ -146,6 +146,41 @@ Universidad de Alicante \\
 
 % Después de la portada, se introducirá un resumen del Trabajo Fin de Grado (máximo 500 palabras) en una de las lenguas oficiales y en inglés, junto con las palabras clave (de 3 a 5).
 
+\section*{Agradecimientos}
+\addcontentsline{toc}{section}{Agradecimientos}
+
+\textbf{A mis padres y mi hermana,} \\[0.5em]
+por estar desde el primer segundo. \\
+Por darme la confianza que necesitaba cuando lo veía todo borroso. \\
+Por dar todo por mí en cualquier circunstancia. \\
+Teneros a mi lado es lo más valioso que la vida me ha podido ofrecer. \\[1em]
+
+\textbf{A mis amigos del pueblo,} \\[0.5em]
+por ser aquellos momentos de luz en la más profunda oscuridad. \\
+Porque estar con vosotros es la mejor terapia. \\
+Por no dejarme solo nunca, y aguantar mis peores momentos en estos 5 años. \\
+Porque estar con vosotros es sinónimo de felicidad y desenfreno. \\[1em]
+
+\textbf{A mis amigos de la universidad,} \\[0.5em]
+por acompañarme a salir de mi zona de confort. \\
+Por haber sido compañeros de batalla estos 5 años. \\ 
+En especial a Jimena, que he pasado de nombrarla en los \textit{writings} de inglés a mencionarla en la dedicatoria del TFG. \\
+Y en especial a Malena, por ser mi mayor cómplice. \\[1em]
+
+\textbf{A mi tutor Julen,} \\[0.5em]
+por servir de guía e inspiración durante este último tramo de carrera. \\
+Por ayudarme a crecer en últimos términos como futuro matemático. \\[1em]
+
+\textbf{A mí,} \\[0.5em]
+por nunca abandonar aunque costara la vida misma. \\
+Por levantar a los demás incluso cuando yo mismo apenas podía. \\
+Por aceptar los cambios y no tenerles miedo. \\[1em]
+
+
+
+
+\newpage
+
 
 \section*{Resumen}
 
@@ -224,7 +259,7 @@ Así pues, para poner a prueba estos métodos, se va a utilizar un conjunto de d
     \label{fig:fig41}
 \end{figure}
 
-En la Figura $~\ref{fig:fig41}$, se puede ver la totalidad de los datos de la serie temporal. Se observa una tendencia creciente en el número de pasajeros a lo largo del tiempo, junto a u patrón estacional que se repite cada año. Se aprecia el impacto que tuvo el COVID en estos datos: la disminución de demanda que conllevó entre los años 2019-2020 y su recuperación en los años siguientes. Por tanto, supone un reto intentar modelar el número de pasajeros para los años siguientes.
+En la Figura $~\ref{fig:fig41}$, se puede ver la totalidad de los datos de la serie temporal. Se observa una tendencia creciente en el número de pasajeros a lo largo del tiempo, junto a un patrón estacional que se repite cada año. Se aprecia el impacto que tuvo el COVID en estos datos: la disminución de demanda que conllevó entre los años 2019-2020 y su recuperación en los años siguientes. Por tanto, supone un reto intentar modelar el número de pasajeros para los años siguientes.
 
 La intención de este trabajo es encontrar modelos capaces de adaptarse a los datos y fluctuaciones en ellos. Para retarlos, se va a considerar este conjunto de datos como si fueran dos: se tomará un conjunto de datos que esté comprendido entre 2003 y 2019 (primer conjunto de datos), y otro entre 2003 y 2023 (segundo conjunto de datos), para ver cómo la influencia del COVID-19 afecta a los modelos de series temporales. 
 
@@ -246,7 +281,7 @@ donde $y_t$ son los valores reales e $\hat{y}_t$ son los valores predichos para 
 
 Por consiguiente, para evaluar cada modelo se utilizará la métrica MAPE sobre el conjunto de entrenamiento y de testeo. Para seleccionar el mejor modelo en cada sección y para cada \textit{data set}, se compararán los datos del conjunto de testeo con las predicciones resultantes del conjunto de entrenamiento y se elegirá aquel que menor error MAPE tenga para el testeo.
 
-Además, se usará el error MSE para obtener los mejores parámetros en el conjunto de entrenamiento para cada modelo, y se llevarán a cabo las predicciones usando estos mejores parámetros. Como se ha comentado, se elegirán los mejores parámetros sobre el conjunto de entrenamiento, pero también existe la posibilidad de tomar un subconjunto del conjunto de entrenamiento, conocido como conjunto de validación, y tomar los mejores parámetros sobre este subconjunto. La principal carencia del enfoque llevado a cabo consiste en que el modelo se puede ajustar con demasiada exactitud al conjunto de entrenamiento, cayendo en el \textit{overfitting} (~\ref{def:overfitting}). No obstante, se verá que esto se ha evitado en todo momento y que. para este trabajo, esto no supone una limitación.
+Además, se usará el error MSE para obtener los mejores parámetros en el conjunto de entrenamiento para cada modelo, y se llevarán a cabo las predicciones usando estos mejores parámetros. Como se ha comentado, se elegirán los mejores parámetros sobre el conjunto de entrenamiento, pero también existe la posibilidad de tomar un subconjunto del conjunto de entrenamiento, conocido como conjunto de validación, y tomar los mejores parámetros sobre este subconjunto. La principal carencia del enfoque llevado a cabo consiste en que el modelo se puede ajustar con demasiada exactitud al conjunto de entrenamiento, cayendo en el \textit{overfitting} (~\ref{def:overfitting}). No obstante, se verá que esto se ha evitado en todo momento y que, para este trabajo, esto no supone una limitación.
 
 
 Finalmente, se compararán los modelos mejor ajustados de cada una de las secciones del trabajo para concluir cuál es el que mejor se adapta a cada conjunto de datos y analizar las consecuencias del COVID para este sector. 
@@ -264,7 +299,7 @@ T = \{0, 1, 2, \dots\}, \quad T = \{1, 2, 3, \dots\}, \quad T = [0, \infty), \qu
 \end{definition}
 
 \begin{definition}
-Una serie temporal $\{X_t, t \in \mathbb{Z}\}$ se dice que es estacionaria si: $\mathbb{E}[X_t^2] < \infty$, $\mathbb{E}[X_t] = \mu$ y $\gamma(r, s) = \gamma(r + t, s + t), \quad \forall r, s, t \in \mathbb{Z}$, donde $\mu$ es la media y $\gamma$ es la función de autocovarianza.
+Una serie temporal $\{X_t, t \in \mathbb{Z}\}$ se dice que es estacionaria si: $\mathbb{E}[X_t^2] < \infty$, $\mathbb{E}[X_t] = \mu$ y $\gamma(r, s) = \gamma(r + t, s + t), \forall r, s, t \in \mathbb{Z}$, donde $\mu$ es la media y $\gamma$ es la función de autocovarianza.
 \end{definition}
 
 Uno de los principales modelos de series temporales clásicos son los modelos ARIMA(\textit{Autoregressive Integrated Moving Average}), que son procesos no estacionarios, combinación de los procesos ARMA junto con procesos integrados.
@@ -308,7 +343,7 @@ Así, el predictor lineal que minimiza el error MSE es:
 \hat{X}_T(h) = E[X_{T+h}|X_1,...,X_T] 
 \end{equation}
 
-Se pueden calcular las predicciones ya que el predictor lineal cumple:
+Se pueden calcular las predicciones, ya que el predictor lineal cumple:
 
 \begin{equation}
 \label{eq:1}
@@ -339,7 +374,7 @@ donde
 
 La implementación en \textit{Python} de este modelo se llevaba a cabo con los paquetes \texttt{statsmodels} y  \texttt{pmdarima}, aplicados a datos mensuales. Para identificar los mejores modelos SARIMA, se hará uso de la metodología de Box-Jenkins, que consiste en realizar transformaciones para obtener una serie temporal estacionaria (para estabilizar la varianza y la media), usar los gráficos de la función de autocorrelación (ACF) y la función de autocorrelación parcial (PACF) para identificar la estructura ARMA y seleccionar los mejores modelos a partir de los criterios AIC, AICc y BIC (~\ref{def:criterios}). 
 
-No obstante, también existe la posibilidad de encontrar el mejor modelo usando la función \texttt{auto\_arima} del paquete \texttt{pmdarima}. Se basa en la conocida función de \texttt{R} \newline \texttt{forecast\:\:auto\.arima}. Funciona realizando tests de diferenciación (por ejemplo, Dickey-Fuller Aumentado (~\ref{def:dickey})) para determinar el orden de diferenciación \textit{d}, y luego ajustando modelos dentro de los rangos definidos de \textit{p} y \textit{q}. También identifica los mejores hiperparámetros estacionales \textit{P} y \textit{Q}, realizando previamente el test de Canova-Hansen para decidir el orden de diferenciación estacional \textit{D}. Para encontrar el mejor modelo, optimiza según un criterio de información (que puede ser AIC, AICc o BIC) y devuelve el modelo que minimiza dicho valor.
+No obstante, también existe la posibilidad de encontrar el mejor modelo usando la función \texttt{auto\_arima} del paquete \texttt{pmdarima}. Se basa en la conocida función de \texttt{R} \newline \texttt{forecast\:\:auto\_arima}. Funciona realizando tests de diferenciación (por ejemplo, Dickey-Fuller Aumentado (~\ref{def:dickey})) para determinar el orden de diferenciación \textit{d}, y luego ajustando modelos dentro de los rangos definidos de \textit{p} y \textit{q}. También identifica los mejores hiperparámetros estacionales \textit{P} y \textit{Q}, realizando previamente el test de Canova-Hansen para decidir el orden de diferenciación estacional \textit{D}. Para encontrar el mejor modelo, optimiza según un criterio de información (que puede ser AIC, AICc o BIC) y devuelve el modelo que minimiza dicho valor.
 
 \subsubsection{Predicciones con el modelo SARIMA para el primer \textit{data set}}\label{sec:36}
 
@@ -372,7 +407,7 @@ La función \texttt{auto\_arima} sugiere que el mejor modelo para estos datos es
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{residuos.png}
+    \includegraphics[width=0.8\textwidth]{residuos.png}
     \caption{Gráfica de residuos del modelo SARIMA} 
     \label{fig:fig31}
 \end{figure}
@@ -403,14 +438,14 @@ Por lo tanto, en la Figura $~\ref{fig:fig26}$ se pueden observar las prediccione
 \newpage
 \section{Prophet}\label{sec:1}
 
-Prophet \cite{prophet1} es uno de los modelos de predicción de series temporales más populares en la actualidad. Fue desarrollado por Facebook como software de código abierto por Sean J. Taylor y Ben Letham, y lanzado en 2017. Se destaca frente a las técnicas tradicionales por dos razones principales:
+\textit{Prophet} \cite{prophet1} es uno de los modelos de predicción de series temporales más populares en la actualidad. Fue desarrollado por \textit{Facebook} como \textit{software} de código abierto por Sean J. Taylor y Ben Letham, y lanzado en 2017. Se destaca frente a las técnicas tradicionales por dos razones principales:
 
 \begin{itemize}
     \item Las herramientas de predicción más automatizadas suelen ser poco flexibles y dificultan la incorporación de supuestos adicionales al modelo.
     \item Las metodologías más avanzadas requieren un alto grado de especialización, lo que implica que solo expertos en ciencia de datos pueden configurarlas correctamente.
 \end{itemize}
 
-Prophet fue diseñado específicamente para manejar las características más comunes de las series temporales en entornos empresariales, como múltiples estacionalidades fuertes, cambios de tendencia, valores atípicos y efectos de días festivos. Además, sus parámetros son intuitivos y fáciles de ajustar, lo que permite a los analistas afinar el modelo sin necesidad de comprender en profundidad sus detalles matemáticos.
+\textit{Prophet} fue diseñado específicamente para manejar las características más comunes de las series temporales en entornos empresariales, como múltiples estacionalidades fuertes, cambios de tendencia, valores atípicos y efectos de días festivos. Además, sus parámetros son intuitivos y fáciles de ajustar, lo que permite a los analistas afinar el modelo sin necesidad de comprender en profundidad sus detalles matemáticos.
 
 Este modelo consiste en descomponer la serie temporal como suma de tres componentes, más un término de error, de la siguiente forma:
 
@@ -533,7 +568,7 @@ No obstante, en la práctica estos coeficientes se estiman a partir de los datos
 X(t) = \left[\cos \left(\frac{2\pi (1) t}{P}\right), \sin \left(\frac{2\pi (1) t}{P}\right), ..., \cos \left(\frac{2\pi (N) t}{P}\right), \sin \left(\frac{2\pi (N) t}{P}\right) \right]
 \end{equation}
 
-Entonces, reescribimos la componente estacional como $s(t) = X(t)\beta$. Así, para estimar los coeficientes de $\beta$, \textit{Prophet} utiliza una regresión lineal bayesiana imponiendo un prior gaussiano sobre los coeficientes; es decir, $a_n, b_n \sim \mathcal{N}(0, \sigma^2), \quad \forall n = 1, \dots, N$, para encontrar la combinación que minimiza la discrepancia entre los datos reales y las aproximaciones de la serie de Fourier. Esto actúa como un suavizado (regularización), evitando que el modelo sobreajuste a fluctuaciones aleatorias en los datos.
+Entonces, reescribimos la componente estacional como $s(t) = X(t)\beta$. Así, para estimar los coeficientes de $\beta$, \textit{Prophet} utiliza una regresión lineal bayesiana imponiendo un prior gaussiano sobre los coeficientes; es decir, $a_n, b_n \sim \mathcal{N}(0, \sigma^2), \forall n = 1, \dots, N$, para encontrar la combinación que minimiza la discrepancia entre los datos reales y las aproximaciones de la serie de Fourier. Esto actúa como un suavizado (regularización), evitando que el modelo sobreajuste a fluctuaciones aleatorias en los datos.
 
 Además, reducir la serie a $N$ aplica un límite a la estacionalidad. Por una parte, aumentar $N$ permite detectar patrones más detallados, pero aumenta el riesgo de un sobreajuste del modelo. Por otra parte, disminuir bruscamente el valor de $N$ puede ocasionar que el modelo no detecte patrones necesarios y que se produzca un subajuste.
 En general, se ha observado que utilizar $N = 10$ para la estacionalidad anual y $N = 3$ para la semanal ofrece buenos resultados en la mayoría de los casos.
@@ -562,7 +597,7 @@ Para finalizar la sección de \textit{Prophet}, vamos a estudiar las prediccione
 
 Antes de empezar a predecir, cabe destacar que hay hiperparámetros \cite{prophet2} explicados en el modelo que se pueden implementar manualmente en \textit{Python}:
 
-En cuanto a la tendencia, se puede ajustar el número de puntos de cambio con el parámetro \texttt{changepoints} si se conocen las fechas en que en que cambia la tendencia. Si se desconocen estos puntos de cambio, el modelo establece por defecto puntos de cambio en el primero 80 \% de la serie para que el modelo no esté sobreajustado (esta parámetro se puede modificar con \texttt{changepoint\_range}). Además, por defecto se establecen hasta 25 puntos de cambio, pero este valor se puede cambiar con el parámetro \texttt{n\_changepoints}.
+En cuanto a la tendencia, se puede ajustar el número de puntos de cambio con el parámetro \texttt{changepoints} si se conocen las fechas en que cambia la tendencia. Si se desconocen estos puntos de cambio, el modelo establece por defecto puntos de cambio en el primero 80\% de la serie para que el modelo no esté sobreajustado (este parámetro se puede modificar con \texttt{changepoint\_range}). Además, por defecto se establecen hasta 25 puntos de cambio, pero este valor se puede cambiar con el parámetro \texttt{n\_changepoints}.
 
 Por otro lado, también se puede modificar el valor de $\tau$ (parámetro de escala de la distribución de Laplace para la tasa $\delta$) con \texttt{changepoint\_prior\_scale}, que por defecto es 0,05. Un valor bajo hace que la tendecia del modelo sea más rígida, llegando al \textit{underfitting} si este valor es demasiado bajo; mientras que un valor alto ayuda a que la tendencia sea más flexible, llegando a caer en el \textit{overfitting} si es demasiado alto.
 
@@ -572,7 +607,7 @@ Por último, Prophet permite ajustar el crecimiento lineal o logístico con el p
 
 En lo que respecta a la implementación de la estacionalidad, se puede ajustar el parámetro $\beta$ del modelo con \texttt{seasonality\_prior\_scale}, que por defecto es 10. Un valor alto permite que el modelo puede ajustarse mejor a los patrones estacionales de los datos y un valor más bajo da como resultado un modelo más uniforme y menos reactivo a los patrones estacionales.
 
-Además, se puede concretar el tipo de estacionalidad (aditiva o multiplicativa) con el comando \texttt{seasonality\_mode}, que por defecto es aditiva. En el caso en que sea multiplicativa, también siguen un modelo multiplicativo los festivos y eventos, pero se puede especificar el tipo de modelo de cada componente con el parámetro \texttt{mode}. Tambíen se puede ajustar el parámetro $N$ con el parámetro \texttt{yearly\_seasonality}.
+Además, se puede concretar el tipo de estacionalidad (aditiva o multiplicativa) con el parámetro \texttt{seasonality\_mode}, que por defecto es aditiva. En el caso en que sea multiplicativa, también siguen un modelo multiplicativo los festivos y eventos, pero se puede especificar el tipo de modelo de cada componente con el parámetro \texttt{mode}. También se puede ajustar el parámetro $N$ con el parámetro \texttt{yearly\_seasonality}.
 
 Por último, para la implementación de los festivos, se pueden añadir como una lista de fechas con el parámetro \texttt{holidays} y el parámetro $\kappa$ del modelo se puede ajustar con \texttt{holidays\_prior\_scale}, cuyo valor predeterminado es 10. Un valor mayor hace que el modelo se ajuste mejor a los efectos de los días festivos, mientras que un valor inferior limita la influencia de estos días festivos en las predicciones.
 
@@ -597,7 +632,7 @@ Para este conjunto de datos, como no aparecen los años del COVID, se considera 
 
 Al predecir para los años 2018-2019, años con los que el modelo no ha sido entrenado, se puede ver que el modelo se ajusta a ellos. En general, el modelo sigue bien la tendencia general de los datos, capturando los patrones que siguen, aunque algunos datos reales no caen dentro de los intervalos de confianza. Este modelo tiene un error MAPE del $2,30\%$.
 
-A continuación, se implementa de nuevo el modelo pero escogiendo los mejores parámetros a partir de combinaciones de parámetros específicos, varios de los mencionados anteriormente. Se proponen varias posibilidades para cada parámetro y se generan todas las combinaciones de posibles hiperparámetros. Entonces, para cada combinación, se ajusta un modelo Prophet sobre los datos de entrenamiento y se evalúa con validación cruzada temporal (~\ref{def:val}). Finalmente, se elige la mejor combinación de hiperparámetros como aquella que minimiza el error RMSE, que consiste en la raíz cuadrada del error MSE. Estos parámetros son: 
+A continuación, se implementa de nuevo el modelo pero escogiendo los mejores parámetros a partir de combinaciones de parámetros específicos, varios de los mencionados anteriormente. Se proponen varias posibilidades para cada parámetro y se generan todas las combinaciones de posibles hiperparámetros. Entonces, para cada combinación, se ajusta un modelo \textit{Prophet} sobre los datos de entrenamiento y se evalúa con validación cruzada temporal (~\ref{def:val}). Finalmente, se elige la mejor combinación de hiperparámetros como aquella que minimiza el error RMSE, que consiste en la raíz cuadrada del error MSE. Estos parámetros son: 
 
 \begin{table}[ht] 
 \centering
@@ -745,17 +780,22 @@ Por consiguiente, comparando los errores MAPE de los tres modelos en la Tabla $~
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8 \textwidth]{componentes_todos.png}
+    \includegraphics[width=0.75 \textwidth]{componentes_todos.png}
     \caption{Componentes del mejor modelo entrenado }
     \label{fig:fig10}
-    \includegraphics[width=0.8\textwidth]{componentes_test.png}
+\end{figure}
+
+Finalmente, se pueden ver las componentes del mejor modelo en la Figura $~\ref{fig:fig10}$. Se observa que la tendencia crece progresivamente desde 2003 hasta 2007, entre 2007 y 2008 hasta 2010 decrece ligeramente (posiblemente a causa de crisis financiera de 2008) y luego vuelve a crecer cada vez de forma más pronunciada hasta 2019, donde se mantiene estable hasta 2021 debido al COVID. En cuanto a la componente anual, se aprecian picos y valles, que sugieren que en ciertas épocas del año hay aumentos y disminuciones en el número de personas que toman un avión.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{componentes_test.png}
     \caption{Componentes de la predicción} 
     \label{fig:fig11}
 \end{figure}
 
-Finalmente, se pueden ver las componentes del mejor modelo y de su predicción en la Figura $~\ref{fig:fig10}$. Se observa que la tendencia crece progresivamente desde 2003 hasta 2007, entre 2007 y 2008 hasta 2010 decrece ligeramente (posiblemente a causa de crisis financiera de 2008) y luego vuelve a crecer cada vez de forma mas pronunciada hasta 2019, donde se mantiene estable hasta 2021 debido al COVID. En cuanto a la componente anual, se aprecian picos y valles, que sugieren que en ciertas épocas del año hay aumentos y disminuciones en el número de personas que toman un avión.
 
-Por su parte, para la predicción (Figura $~\ref{fig:fig11}$), se observa que la tendencia sigue un crecimiento lineal, sin cambios en la pendiente. También, en la componente estacional anual se aprecian los mismos cambios que para el modelo, por lo que las predicciones del modelo siguen bien los patrones de los datos. Para el efecto de fectivos, la línea es bastante plana, lo que indica que estos festivos no han tenido gran impacto en la predicción.
+Por su parte, para las componentes de la predicción (Figura $~\ref{fig:fig11}$), se observa que la tendencia sigue un crecimiento lineal, sin cambios en la pendiente. También, en la componente estacional anual se aprecian los mismos cambios que para el modelo, por lo que las predicciones del modelo siguen bien los patrones de los datos. Para el efecto de fectivos, la línea es bastante plana, lo que indica que estos festivos no han tenido gran impacto en la predicción.
 
 
 
@@ -948,14 +988,14 @@ Por último, cuando la red va hacia delante y hacia atrás una vez, se dice que 
     \label{fig:fig13}
 \end{figure}
 
-En general, las arquitectura de las RNN mantienen similitudes con las redes neuronales tradicionales, pero introduce conexiones recurrentes que permiten el flujo de información a través del tiempo. Ahora, empezamos con una capa de entrada donde se sitúan los datos conocidos, continuamos con un estado oculto donde se producen las conexiones temporales y acabamos con la capa de salida, En la Figura $~\ref{fig:fig13}$ se pueden ver el despliegue de una RNN en el tiempo. 
+En general, la arquitectura de las RNN mantiene similitudes con las redes neuronales tradicionales, pero introduce conexiones recurrentes que permiten el flujo de información a través del tiempo. Ahora, empezamos con una capa de entrada donde se sitúan los datos conocidos, continuamos con un estado oculto donde se producen las conexiones temporales y acabamos con la capa de salida. En la Figura $~\ref{fig:fig13}$ se pueden ver el despliegue de una RNN en el tiempo. 
 
 A continuación, se desarrollará el aprendizaje \cite{rnn2} de una RNN:
 
 \subsubsection{Propagación hacia delante}\label{sec:15}
 
 
-Considérese una serie temporal $\{X_t\}$ con T elementos y sean $n,m,p \in \mathbb{N}$. Antes de inicializar la RRN, se denotan algunos elementos: 
+Considérese una serie temporal $\{X_t\}_{t=1}^{T}$, con T elementos, y sean $n,m,p \in \mathbb{N}$. Antes de inicializar la RRN, se denotan algunos elementos: 
 
 \begin{itemize}
     \item $x^{(t)} \in \mathbb{R}^n$ el dato de entrada en ese instante t.
@@ -1097,9 +1137,9 @@ Las redes neuronales \textit{Long Short-Term Memory} (LSTM) constituyen un tipo 
 \end{figure}
 
 
-Presentan una estructura modular que consta de tres puertas (\textit{gates}) principales: la puerta de olvido (\textit{forget gate}), la puerta de entrada (\textit{input gate}), y la puerta de salida (\textit{output gate}). Estas puertas trabajan en conjunto para regular el flujo de información a través de la unidad de memoria, permitiendo un control más preciso sobre qué información retener y cuál olvidar. Se puede considerar una cuarta puerta llamada nueva celda de memoria (\textit{new memory}). Esta estructura se observa en la Figura $~\ref{fig:fig25}$
+Presentan una estructura modular que consta de tres puertas (\textit{gates}) principales: la puerta de olvido (\textit{forget gate}), la puerta de entrada (\textit{input gate}), y la puerta de salida (\textit{output gate}). Estas puertas trabajan en conjunto para regular el flujo de información a través de la unidad de memoria, permitiendo un control más preciso sobre qué información retener y cuál olvidar. Se puede considerar una cuarta puerta llamada nueva celda de memoria (\textit{new memory}). Esta estructura se observa en la Figura $~\ref{fig:fig25}$.
 
-Considérese una serie temporal $\{X_t\}$ de $T$ elementos, a continuación se describe cómo llevar a cabo la propagación hacia delante. Sean $t \in \{1,...,T\}$ y $x_t$ el elemento t-ésimo de la serie temporal. Para las red LSTM, se utilizan principalmente las funciones de activación sigmoide y la tangente hiperbólica.
+Considérese una serie temporal $\{X_t\}_{t=1}^T$, a continuación se describe cómo llevar a cabo la propagación hacia delante. Sean $t \in \{1,...,T\}$ y $x_t$ el elemento t-ésimo de la serie temporal. Para las red LSTM, se utilizan principalmente las funciones de activación sigmoide y la tangente hiperbólica.
 
 \vspace{0.5em}
 \noindent\textnormal{\large 1. Puerta de entrada}
@@ -1117,7 +1157,7 @@ donde $W_i \in \mathbb{M}_{m \times m}(\mathbb{R)}, U_i \in \mathbb{M}_{m \times
 \noindent\textnormal{\large 2. Puerta del olvido}
 \vspace{0.2em}
 
-Esta puerta determina regula cuánta información se debe olvidar y cuánta se mantiene, combinando la entrada actual y la salida anterior mediante una función sigmoide, a partir de un vector $f^{(t)} \in [0,1]^m$ que se expresa como:
+Esta puerta regula cuánta información se debe olvidar y cuánta se mantiene, combinando la entrada actual y la salida anterior mediante una función sigmoide, a partir de un vector $f^{(t)} \in [0,1]^m$ que se expresa como:
 
  \begin{equation}
  f^{(t)} = sig(W_fh^{(t-1)} + U_fx^{(t)} +  b_f),  
@@ -1175,7 +1215,7 @@ Finalmente, la salida $\hat{y}^{(t)} \in \mathbb{R}^p$ de la celda se obtiene co
 \hat{y}^{(t)} = Vh^{(t)} + b_y,
 \end{equation}
 
-donde $V \in \mathbb{M}_{p \times m}$ y el sesgo $b_y \in \mathbb{R^p}$ son los pesos que se aprenden de la salida. Además, es posible aplicar una función de activación a la salida; es decir, se podría establecer $\hat{y}^{(t)} =g( Vh^{(t)} + b_y)$, con g una función de activación.
+donde $V \in \mathbb{M}_{p \times m}$ y el sesgo $b_y \in \mathbb{R}^p$ son los pesos que se aprenden de la salida. Además, es posible aplicar una función de activación a la salida; es decir, se podría establecer $\hat{y}^{(t)} =g( Vh^{(t)} + b_y)$, con g una función de activación.
 
 
 A continuación, para entrenar correctamente la red LSTM, vendría la propagación hacia atrás para actualizar los pesos y sesgos, que se lleva a cabo con el método BPTT explicado en la sección ~\ref{sec:16}, pero teniendo en cuenta ahora la estructura en puertas. Esta actualizada propagación hacia atrás, a diferencia de las RNN tradicionales, afecta en considerablemente menor medida al problema del desvanecimiento o explosión del gradiente, lo que les permite a las redes LSTM aprender dependencias de largo plazo de manera más estable.
@@ -1190,10 +1230,10 @@ Para finalizar este apartado de redes neuronales, se va a estudiar cómo se impl
     \item \texttt{units}: es el número de celdas LSTM en paralelo que hay en cada capa, que ayudan al aprender patrones complejos o de largo plazo. Teóricamente, se ha explicado el modelo con solo una celda, pero se puede trabajar con numerosas celdas en paralelo.
     \item \texttt{return\_sequences}: si se iguala a \textit{True}, la capa devuelve todos los estados oculto y, si se iguala a \textit{False}, solo devuelve el último estado oculto.
     \item \texttt{Dense(nº)}: este parámetro se pone al final del modelo para establecer la capa de salida. El número entre paréntesis es el número de predicciones que se desea realizar.
-    \item \texttt{optimizer}: es el algoritmo que ajusta los pesos y los sesgos durante el entrenamiento. Los más comunes son \textit{adam}, \textit{rmsprop} y \textit{nadam}, que son variantes del descenso del gradiente evitan el problema del desvanecimiento/explosión del gradiente.
+    \item \texttt{optimizer}: es el algoritmo que ajusta los pesos y los sesgos durante el entrenamiento. Los más comunes son \textit{adam}, \textit{rmsprop} y \textit{nadam}, que son variantes del descenso del gradiente que evitan el problema del desvanecimiento/explosión del gradiente.
     \item \texttt{loss}: es la función de pérdida o coste a minimizar.
     \item \texttt{epochs}: el número de veces que se propagaga hacia delante y hacia atrás.
-    \item \texttt{batch\_size}: los datos de entrenamiento se dividen en lotes (batches) para efectuarlo de manera más eficiente y que el coste computacional sea menor. El parámetro \texttt{batch\_size} indica el número de datos que habrá en cada lote.
+    \item \texttt{batch\_size}: los datos de entrenamiento se dividen en lotes (\textit{batches}) para efectuarlo de manera más eficiente y que el coste computacional sea menor. El parámetro \texttt{batch\_size} indica el número de datos que habrá en cada lote.
 \end{itemize}
 
 \subsubsection{Predicciones con el modelo LSTM para el primer data set}\label{sec:19}
@@ -1202,7 +1242,7 @@ Se recuerda que en este conjunto de datos no se encuentran los años problemáti
 
 A continuación, se deben escalar los datos. Se hace uso del escalador \textit{MinMax} para llevarlos a un rango entre 0 y 1. Este paso es fundamental porque las redes neuronales son altamente sensibles a la escala de las variables, ya que si los datos no se escuentran escalados, el entrenamiento puede no realizarse correctamente y alterar los resultados. Además, puesto que los pesos y segos iniciales son aleatorios y se cambian cada vez que se inicializa el modelo, se fijan para que no cambien en el tiempo.
 
-Ahora bien, para elegir los mejores parámetros para nuestro modelo LSTM, se sigue la siguiente estrategia: para cada parámetro de los explicados anteriormente, se ofrecen diversas posibilidades y se crean todas las combinaciones posibles de ellos mediante bucles anidados. Para cada combinación: se define si se trabaja con una ventana de entrada de 12 o 24 pasos de tiempo (ajustando en consecuencia el conjunto de testeo), se crean los conjuntos de entrenamiento y testeo y se reorganizan las entradas en formato adecuado para LSTM. Se contruye un modelo secuencial con dos capas ocultas y una capa de salida. Se llevaba a cabo un modelo para combinación, se entrena con el conjunto de entrenamiento y se calcula el error MSE entre las predicciones y los valores reales. Finalmente, se escoge la combinación de parámetros que minimiza el error MSE. Así, para este \textit{data set}, la mejor combinación encontrada es:
+Ahora bien, para elegir los mejores parámetros para nuestro modelo LSTM, se sigue la siguiente estrategia: para cada parámetro de los explicados anteriormente, se ofrecen diversas posibilidades y se crean todas las combinaciones posibles de ellos mediante bucles anidados. Para cada combinación, se define si se trabaja con una ventana de entrada de 12 o 24 pasos de tiempo (ajustando en consecuencia el conjunto de testeo), se crean los conjuntos de entrenamiento y testeo y se reorganizan las entradas en formato adecuado para LSTM. Se contruye un modelo secuencial con dos capas ocultas y una capa de salida. Se llevaba a cabo un modelo por combinación, se entrena con el conjunto de entrenamiento y se calcula el error MSE entre las predicciones y los valores reales. Finalmente, se escoge la combinación de parámetros que minimiza el error MSE. Así, para este \textit{data set}, la mejor combinación encontrada es:
 
 \begin{table}[ht] 
 \centering
@@ -1234,7 +1274,7 @@ Ahora bien, para elegir los mejores parámetros para nuestro modelo LSTM, se sig
 %\label{tab:error3.1}
 %\end{table}
 
-Además, en la Figura $~\ref{fig:fig15}$ se observa que las predicciones se ajustan con bastante exactitud a los valores reales, notando que siguen las estacionalidad y patrones de los datos, a pesar de que las predicciones en ciertos momentos son menores que los valores reales. Por último, este modelo tiene un error MAPE del $3,34\%$, por lo que podemos concluir que este modelo se generaliza y adapta bien a los datos y, dado que el conjunto de entrenamiento tiene un error MAPE del $2,72\%$, podemos asegurar la no presencia de \textit{overfitting} ni \textit{underfitting}.
+Además, en la Figura $~\ref{fig:fig15}$, se observa que las predicciones se ajustan con bastante exactitud a los valores reales, notando que siguen las estacionalidad y patrones de los datos, a pesar de que las predicciones en ciertos momentos son menores que los valores reales. Por último, este modelo tiene un error MAPE del $3,34\%$, por lo que podemos concluir que este modelo se generaliza y adapta bien a los datos y, dado que el conjunto de entrenamiento tiene un error MAPE del $2,72\%$, podemos asegurar la no presencia de \textit{overfitting} ni \textit{underfitting}.
 
 \subsubsection{Predicciones con el modelo LSTM para el segundo data set}\label{sec:20}
 
@@ -1278,7 +1318,7 @@ Por consiguiente, analizando las predicciones para este modelo en la Figura $~\r
 
 Aunque los modelos \textit{Prophet} siguen siendo uno de los más utilizados en la predicción de series temporales, sus limitaciones como la falta de contexto local (indispensable para prever el futuro cercano) y de extensibilidad impulsaron el desarrollo de un modelo que las superara: el modelo \textit{NeuralProphet}. 
 
-\textit{NeuralProphet} \cite{np1} es una herramienta de predicción fácil de usar e interpretable, diseñada en torno a 2021 como fusión de los componentes clásicos de series temporales introducidos por \textit{Prophet} con módulos de redes neuronales en un modelo híbrido, lo que le permite adaptarse a relaciones no lineales. 
+\textit{NeuralProphet} \cite{np1} es una herramienta de predicción fácil de usar e interpretable, diseñada en torno a 2021 como fusión de los componentes clásicos de series temporales introducidos por \textit{Prophet} con redes neuronales en un modelo híbrido, lo que le permite adaptarse a relaciones no lineales. 
 
 Una de las ventajas distintivas de \textit{NeuralProphet} es su facilidad de uso. A diferencia de otras bibliotecas de aprendizaje automático, \textit{NeuralProphet} está diseñado para ser accesible incluso para aquellos sin experiencia profunda en Ciencia de Datos. Su interfaz simple y bien documentada permite a los usuarios cargar y explorar datos en series temporales, ajustar modelos y realizar predicciones en solo unas pocas líneas de código.
 
@@ -1735,9 +1775,9 @@ Ahora, se aprecia cómo los modelos complejos tienen errores en el entrenamiento
 
 Durante el desarrollo de este trabajo, se han estudiado diferentes clases de modelos: desde los procesos más clásicos de series temporales, hasta los más recientes pasando por modelos totalmente diferentes en cuanto a estructura. Se ha desarrollado una ardua labor de investigación de la teoría que hay detrás de cada modelo, a la par de su implementación en \textit{Python} a partir de dos conjuntos de datos relativos al tráfico aéreo mensual de EE.UU. El primer \textit{data set} abarca desde 2003 hasta 2019, y el segundo hasta 2023. Este último contiene los problemáticos años del COVID, por lo que se trata como datos complicados.
 
-En primera lugar, se ha desarrollado el modelo clásico SARIMA y se ha comprobado que, para conjuntos de datos complicados, presentan diversas limitaciones, pues relacionan las observaciones y sus retardos de forma lineal y solo son capaces de modelar una estacionalidad a la vez. A continuación, se sigue la mejora en cuanto a rendimiento e interpretabilidad que supone el modelo \textit{Prophet} en comparación al SARIMA, ya que tiene una descomposición aditiva o multiplicativa, permite añadir al modelo los efectos festivos futuros a tener en cuenta  y es capaz de modelar diferentes estacionalidades en un mismo tiempo. Posteriormente, se han introducido la teoría general de las redes neuronales, centrándose en las redes neuronales recurrentes hasta llegar al modelo LSTM, que se caracteriza en este trabajo por su distintiva forma de entrenar y predecir. Destaca su capacidad para analizar relaciones no lineales y su forma de construir el modelo, siempre a partir de los datos, a la par de su enorme costo computacional. Por último, se culmina el estudio de modelos  con el que es el objeto de estudio de este trabajo, el modelo \textit{NeuralProphet}, que se puede definir \textit{grosso modo} como la unión del modelo Prophet y las redes neuronales. Este modelo tiene lo mejor de ambos: puede capturar distintos tipos de tendencias, puede captar diferentes patrones estacionales y trabajar con ellos simultáneamente y sigue teniendo facilidad de interpretación y uso.
+En primera lugar, se ha desarrollado el modelo clásico SARIMA y se ha comprobado que, para conjuntos de datos complicados, presentan diversas limitaciones, pues relacionan las observaciones y sus retardos de forma lineal y solo son capaces de modelar una estacionalidad a la vez. A continuación, se sigue la mejora en cuanto a rendimiento e interpretabilidad que supone el modelo \textit{Prophet} en comparación al SARIMA, ya que tiene una descomposición aditiva o multiplicativa, permite añadir al modelo los efectos festivos futuros a tener en cuenta  y es capaz de modelar diferentes estacionalidades en un mismo tiempo. Posteriormente, se han introducido la teoría general de las redes neuronales, centrándose en las redes neuronales recurrentes hasta llegar al modelo LSTM, que se caracteriza en este trabajo por su distintiva forma de entrenar y predecir. Destaca su capacidad para analizar relaciones no lineales y su forma de construir el modelo, siempre a partir de los datos, a la par de su enorme costo computacional. Por último, se culmina el estudio de modelos  con el que es el objeto de estudio de este trabajo, el modelo \textit{NeuralProphet}, que se puede definir \textit{grosso modo} como la unión del modelo \textit{Prophet} y las redes neuronales. Este modelo tiene lo mejor de ambos: puede capturar distintos tipos de tendencias, puede captar diferentes patrones estacionales y trabajar con ellos simultáneamente y sigue teniendo facilidad de interpretación y uso.
 
-Gracias a la implementación practica en \textit{Python} de los algoritmos desarrollados, se ha llegado a la conclusión de que el modelo \textit{Prophet} es una de las mejores opciones para empezar a estudiar una serie temporal, y si los datos son complicados, una aún mejor opción es el modelo \textit{NeuralProphet}. 
+Gracias a la implementación práctica en \textit{Python} de los algoritmos desarrollados, se ha llegado a la conclusión de que el modelo \textit{Prophet} es una de las mejores opciones para empezar a estudiar una serie temporal, y si los datos son complicados, una aún mejor opción es el modelo \textit{NeuralProphet}. 
 
 
 \begin{figure}[h]
@@ -1748,7 +1788,7 @@ Gracias a la implementación practica en \textit{Python} de los algoritmos desar
     \label{fig:fig30}
 \end{figure}
 
-Para el primer conjunto de datos, se puede en la primera imagen de la Figura $~\ref{fig:fig30}$ la predicción para el año 2022 con el modelo \textit{Prophet}. Se observa cómo se esperaba que el número de pasajeros por mes para ese año estuviera entre $65-90$ millones, algo más que en años anteriores. Por otro lado, para el segundo conjunto de datos, se puede apreciar en la segunda imagen de la Figura $~\ref{fig:fig30}$ la predicción para los tres últimos meses de 2023 y todo 2024, con el modelo \textit{NeuralProphet}. Se ve que el número esperado de pasajeros por mes para ese periodo de tiempo se sitúa entre $74-88$ millones, algo ligeramente superior a años anteriores.
+Para el primer conjunto de datos, se puede ver en la primera imagen de la Figura $~\ref{fig:fig30}$ la predicción para el año 2022 con el modelo \textit{Prophet}. Se observa cómo se esperaba que el número de pasajeros por mes para ese año estuviera entre $65-90$ millones, algo más que en años anteriores. Por otro lado, para el segundo conjunto de datos, se puede apreciar en la segunda imagen de la Figura $~\ref{fig:fig30}$ la predicción para los tres últimos meses de 2023 y todo 2024, con el modelo \textit{NeuralProphet}. Se ve que el número esperado de pasajeros por mes para ese periodo de tiempo se sitúa entre $74-88$ millones, algo ligeramente superior a años anteriores.
 
 Se puede observar cómo la estimación del número de pasajeros para 2024 casi se asimila a la de 2022, lo que nos lleva a pensar en el gran efecto del COVID en este sector, que en 2024 todavía no estaría del todo recuperado.
 
@@ -1762,12 +1802,11 @@ En particular, en empresas que disponen de variedad de productos y tiendas distr
 \addcontentsline{toc}{section}{Referencias}
 \begin{thebibliography}{100}
 
+\bibitem{redes5}
+Ali, M., Introducción a las funciones de activación en las redes neuronales. \url{https://www.datacamp.com/es/tutorial/introduction-to-activation-functions-in-neural-networks} (Consultado el 3 de mayo de 2025).
 
 \bibitem{rnn1}
 Amat Rodrigo, J. and Carazo, F., Deep Learning para la predicción de series temporales: Redes Neuronales Recurrentes (RNN) y Long Short-Term Memory (LSTM). \url{https://cienciadedatos.net/documentos/py54-forecasting-con-deep-learning} (Consultado el 3 de mayo de 2025).
-
-\bibitem{redes5}
-Ali, M., Introducción a las funciones de activación en las redes neuronales. \url{https://www.datacamp.com/es/tutorial/introduction-to-activation-functions-in-neural-networks} (Consultado el 3 de mayo de 2025).
 
 \bibitem{sarima1}
 Brockwell, P.J. and Davis, R.A. (1987) \textit{Time Series: Theory and Methods}. Springer.
@@ -1811,9 +1850,9 @@ Triebe, O., Selecting the Hyperparameters. \url{https://neuralprophet.com/how-to
 \appendix
 
 \section{Detalles del desarrollo del trabajo}
-Todo el códido desarrollado durante el trabajo para llevar a cabo los diferentes modelos, obtener resultados y dibujar gráficas se puede encontrar fácilmente en la carpeta de \textit{GitHub} (\url{https://github.com/juanfran12345/TFG}). Además, el código se encuentra dividio en diferentes \textit{notebooks}, organizados según las secciones del proyecto y el conjunto de datos. En total, ocho \textit{notebooks}.
+Todo el códido desarrollado durante el trabajo para llevar a cabo los diferentes modelos, obtener resultados y dibujar gráficas se puede encontrar fácilmente en la carpeta de \textit{GitHub} (\url{https://github.com/juanfran12345/TFG}). Además, el código se encuentra dividido en diferentes \textit{notebooks}, organizados según las secciones del proyecto y el conjunto de datos. En total, ocho \textit{notebooks}.
 
-Los datos usados han sido proporcionados por \textit{Kaggle} y se encuentras en el siguiente enlace: \href{https://www.kaggle.com/datasets/yyxian/u-s-airline-traffic-data}{https://www.kaggle.com/datasets/yyxian/u-s-airline-traffic-data}.
+Los datos usados han sido proporcionados por \textit{Kaggle} y se encuentran en el siguiente enlace: \href{https://www.kaggle.com/datasets/yyxian/u-s-airline-traffic-data}{https://www.kaggle.com/datasets/yyxian/u-s-airline-traffic-data}.
 
 \begin{table}[ht] 
 \centering
@@ -1853,7 +1892,7 @@ Análsis de datos II & General & Interpretación y discusión de los modelos. \\
 
 \section{Terminología}
 
-Para un correcto entendimiento del trabajo, se considera oportuno definir los siguientes términos en ciencia de datos que se mencionan a lo largo del mismo:
+Para un correcto entendimiento del trabajo, se considera oportuno definir los siguientes términos en Ciencia de Datos que se mencionan a lo largo del mismo:
 
 \begin{definition}\label{def:overfitting}
 Se dice que un modelo cae en \textit{overfitting} (sobreajuste) cuando un modelo aprende con demasiada precisión los datos de entrenamiento, lo que impide generalizar correctamente nuevos datos. Se suele notar cuando el error para el conjunto de entramiento es considerablemente menor al del conjunto de prueba.
